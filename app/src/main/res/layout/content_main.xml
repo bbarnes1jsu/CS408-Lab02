@@ -39,6 +39,7 @@
             android:id="@+id/buttonRock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="rockButtonClicked"
             android:text="@string/button"
             tools:text="Rock" />
 
@@ -46,6 +47,7 @@
             android:id="@+id/buttonPaper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="paperButtonClicked"
             android:text="@string/button"
             tools:text="Paper" />
 
@@ -53,6 +55,7 @@
             android:id="@+id/buttonScissors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="scissorsButtonClicked"
             android:text="@string/button"
             tools:text="Scissors" />
 
@@ -84,7 +87,6 @@
             android:id="@+id/winnerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

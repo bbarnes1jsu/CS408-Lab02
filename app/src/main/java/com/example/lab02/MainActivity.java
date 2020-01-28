@@ -12,7 +12,33 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.widget.*;
+
 public class MainActivity extends AppCompatActivity {
+
+    private int playerCounter;
+    private int comCounter;
+
+    Weapon playerWeapon;
+    Weapon comWeapon;
+
+    public enum Weapon {
+
+        ROCK("Rock"),
+        PAPER("Paper"),
+        SCISSORS("Scissors");
+        private String message;
+
+        private Weapon(String msg) { message = msg; }
+
+        @Override
+        public String toString() { return message; }
+
+    }
+
+    public enum Result{
+        WIN, LOSS, DRAW
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        playerCounter = 0;
+        comCounter = 0;
     }
 
     @Override
@@ -52,4 +81,20 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void rockButtonClicked(View v){
+        playerWeapon = Weapon.ROCK;
+    }
+
+    public void paperButtonClicked(View v){
+        playerWeapon = Weapon.PAPER;
+    }
+
+    public void scissorsButtonClicked(View V){
+        playerWeapon = Weapon.SCISSORS;
+    }
+
+
+
 }
