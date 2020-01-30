@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Lab02</string>
     <string name="action_settings">Settings</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="button">Button</string>
-    <string name="button">Button</string>
-    <string name="button">Button</string>
+    <string name="textview">Welcome to Rock-Paper-Scissors!</string>
+    <string name="textview1">Please choose your weapon:</string>
+    <string name="button1">Rock</string>
+    <string name="button2">Paper</string>
+    <string name="button3">Scissors</string>
+    <string name="textview2">TextView</string>
 </resources>

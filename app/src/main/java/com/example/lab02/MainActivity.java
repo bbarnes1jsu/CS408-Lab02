@@ -14,6 +14,8 @@ import android.view.MenuItem;
 
 import android.widget.*;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private int playerCounter;
@@ -34,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public String toString() { return message; }
 
+        public  Weapon getRandomWeapon(){
+            Weapon[] values = Weapon.values();
+            Random random = new Random();
+            return (values[random.nextInt(values.length)]);
+        }
+
     }
 
-    public enum Result{
-        WIN, LOSS, DRAW
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,14 +90,89 @@ public class MainActivity extends AppCompatActivity {
 
     public void rockButtonClicked(View v){
         playerWeapon = Weapon.ROCK;
+        TextView t = (TextView) findViewById(R.id.playerWeaponView);
+        t.setText("Player's Weapon: Rock");
+        comWeapon.getRandomWeapon();
+        TextView s = (TextView) findViewById(R.id.comWeaponView);
+        s.setText("Computer's Weapon: " + comWeapon);
+        if (comWeapon == Weapon.ROCK) {
+            if(playerWeapon == Weapon.ROCK){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("It's a draw!");
+            }
+        }
+        else if(comWeapon == Weapon.PAPER){
+            if(playerWeapon == Weapon.ROCK){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("Computer Wins...Paper covers Rock!");
+                comCounter++;
+            }
+        }
+        else if(comWeapon == Weapon.SCISSORS){
+            if(playerWeapon == Weapon.ROCK){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("Player win.. Rock crushes Scissors!");
+                playerCounter++;
+            }
+        }
     }
 
     public void paperButtonClicked(View v){
         playerWeapon = Weapon.PAPER;
+        TextView t = (TextView) findViewById(R.id.playerWeaponView);
+        t.setText("Player's Weapon: Paper");
+        comWeapon.getRandomWeapon();
+        TextView s = (TextView) findViewById(R.id.comWeaponView);
+        s.setText("Computer's Weapon: " + comWeapon);
+        if (comWeapon == Weapon.ROCK) {
+            if(playerWeapon == Weapon.PAPER){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("Player win... Paper covers Rock");
+                playerCounter++;
+            }
+        }
+        else if(comWeapon == Weapon.PAPER){
+            if(playerWeapon == Weapon.PAPER){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("It's a draw!");
+            }
+        }
+        else if(comWeapon == Weapon.SCISSORS){
+            if(playerWeapon == Weapon.PAPER){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("Computer win.. Scissors cut Paper!");
+                comCounter++;
+            }
+        }
     }
 
     public void scissorsButtonClicked(View V){
         playerWeapon = Weapon.SCISSORS;
+        TextView t = (TextView) findViewById(R.id.playerWeaponView);
+        t.setText("Player's Weapon: Scissors");
+        comWeapon.getRandomWeapon();
+        TextView s = (TextView) findViewById(R.id.comWeaponView);
+        s.setText("Computer's Weapon: " + comWeapon);
+        if (comWeapon == Weapon.ROCK) {
+            if(playerWeapon == Weapon.SCISSORS){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("Computer win... Rock crushes Scissors");
+                comCounter++;
+            }
+        }
+        else if(comWeapon == Weapon.PAPER){
+            if(playerWeapon == Weapon.SCISSORS){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("Player win... Scissors cut Paper");
+                playerCounter++;
+            }
+        }
+        else if(comWeapon == Weapon.SCISSORS){
+            if(playerWeapon == Weapon.SCISSORS){
+                TextView u = (TextView) findViewById(R.id.winnerView);
+                u.setText("It's a draw!");
+            }
+        }
     }
 
 

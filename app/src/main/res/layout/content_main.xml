@@ -31,7 +31,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textview"
+            android:text="@string/textview1"
             android:textSize="24sp"
             tools:text="Please choose your weapon:" />
 
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="rockButtonClicked"
-            android:text="@string/button"
+            android:text="@string/button1"
             tools:text="Rock" />
 
         <Button
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="paperButtonClicked"
-            android:text="@string/button"
+            android:text="@string/button2"
             tools:text="Paper" />
 
         <Button
@@ -56,32 +56,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="scissorsButtonClicked"
-            android:text="@string/button"
+            android:text="@string/button3"
             tools:text="Scissors" />
 
         <TextView
             android:id="@+id/scoreOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp"
-            tools:text="Player: , Computer:" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/playerWeaponView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp"
-            tools:text="Player's Weapon:" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/comWeaponView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="24sp"
-            tools:text="Computer's Weapon:" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/winnerView"
