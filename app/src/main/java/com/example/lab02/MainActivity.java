@@ -39,26 +39,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public String toString() { return message; }
 
-        /*
-        public static Weapon determineWinner( Weapon p1, Weapon p2){
 
-            boolean p1_Winner = false;
-            boolean p2_Winner = false;
 
-            switch(p1){
-                case ROCK: if(p2 == Weapon.SCISSORS)
-                                p1_Winner = true;
-                                break;
-                case PAPER: if(p2 == Weapon.ROCK)
-                    p1_Winner = true;
-                    break;
-                case SCISSORS: if(p2 == Weapon.PAPER)
-                    p1_Winner = true;
-                    break;
-            }
-        }*/
-
-        public  Weapon getRandomWeapon(){
+        public static Weapon getRandomWeapon(){
             Weapon[] values = Weapon.values();
             Random random = new Random();
             return (values[random.nextInt(values.length)]);
@@ -117,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         playerWeapon = Weapon.ROCK;
         TextView t = (TextView)findViewById(R.id.playerWeaponView);
         t.setText("Player's Weapon: Rock");
-        comWeapon.getRandomWeapon();
+        comWeapon = Weapon.getRandomWeapon();
         TextView s = (TextView)findViewById(R.id.comWeaponView);
         s.setText("Computer's Weapon: "+ String.valueOf(comWeapon));
 
@@ -141,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
                 ++playerCounter;
             }
         }
+        TextView x = (TextView)findViewById(R.id.scoreOutput);
+        x.setText("Player: " + Integer.toString(playerCounter) + ", Computer: " + Integer.toString(comCounter));
     }
 
     public void paperButtonClicked(View v){
@@ -148,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         playerWeapon = Weapon.PAPER;
         TextView t = (TextView)findViewById(R.id.playerWeaponView);
         t.setText("Player's Weapon: Paper");
-        comWeapon.getRandomWeapon();
+        comWeapon = Weapon.getRandomWeapon();
         TextView s = (TextView)findViewById(R.id.comWeaponView);
         s.setText("Computer's Weapon: " + String.valueOf(comWeapon));
         if (comWeapon == Weapon.ROCK) {
@@ -171,6 +156,8 @@ public class MainActivity extends AppCompatActivity {
                 ++comCounter;
             }
         }
+        TextView x = (TextView)findViewById(R.id.scoreOutput);
+        x.setText("Player: " + Integer.toString(playerCounter) + ", Computer: " + Integer.toString(comCounter));
     }
 
     public void scissorsButtonClicked(View V){
@@ -178,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         playerWeapon = Weapon.SCISSORS;
         TextView t = (TextView)findViewById(R.id.playerWeaponView);
         t.setText("Player's Weapon: Scissors");
-        comWeapon.getRandomWeapon();
+        comWeapon = Weapon.getRandomWeapon();
         TextView s = (TextView)findViewById(R.id.comWeaponView);
         s.setText("Computer's Weapon: " + String.valueOf(comWeapon));
         if (comWeapon == Weapon.ROCK) {
@@ -201,6 +188,8 @@ public class MainActivity extends AppCompatActivity {
                 u.setText("It's a draw!");
             }
         }
+        TextView x = (TextView)findViewById(R.id.scoreOutput);
+        x.setText("Player: " + Integer.toString(playerCounter) + ", Computer: " + Integer.toString(comCounter));
     }
 
 
